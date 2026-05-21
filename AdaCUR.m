@@ -62,7 +62,7 @@ for j =2:q
         d = abs(diag(Re));
         r = sum(d > (e/sqrt(n)) * abs(Re(1,1)));
         I = In(I2(1:r));
-        %In = [I I0];
+
         % if r+p> length(I2)
         %     fprintf("Line 64 Ada \n");
         % end
@@ -74,7 +74,7 @@ for j =2:q
         Uj = Aj(In,J);
         Rj = Aj(In,:);
 
-        minorcount = minorcount +1;
+        %minorcount = minorcount +1;
 
 
         L = Cj * (Uj\Rj);
@@ -87,7 +87,7 @@ for j =2:q
             I0 = OS(Aj,I,J,p);
             In = [I I0]; 
             %minorcount = minorcount-1;
-            scratchcount = scratchcount+1;
+            %scratchcount = scratchcount+1;
         end
 
     end
@@ -95,5 +95,5 @@ for j =2:q
     R{j} = Aj(In,:);
     U{j}= Aj(In,J);
 end
-fprintf('Minor changes=%d and count from scratch=%d\n',minorcount,scratchcount)
+%fprintf('Minor changes=%d and count from scratch=%d\n',minorcount,scratchcount)
 end

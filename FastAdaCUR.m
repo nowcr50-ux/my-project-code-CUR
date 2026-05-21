@@ -29,16 +29,10 @@ U{1} = A1(I(1:r+p),J(1:r));
 for j =2:q
     Aj = A(:,:,t(j));
     Ue = Aj(I,J);
-    %addition
-     % if j==2
-     %     p=10;
-     % end
-    %endaddition
 
-     %[~,~,I1]=sRRQR(Ue',2,"tol",0.05*e/sqrt(n));
-     %[~,Re,J1] =sRRQR(Ue,2,"tol",0.05*e/sqrt(n));
+
+
      [~,~,I1]=sRRQR(Ue',2,"rank",r+b+p);
-     %I1= CPQR(Ue');
      [~,Re,J1] =sRRQR(Ue,2,"rank",r+b);
 
     d = abs(diag(Re));
